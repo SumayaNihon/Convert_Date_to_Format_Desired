@@ -1,9 +1,9 @@
 import datetime
 
-def datetime_format_converter(input):
+def datetime_format_converter(input,desired_format):
     datetime_input = datetime.datetime.strptime(input,"%Y/%m/%d")
 
-    desired_format_converter = datetime_input.strftime("%A, %Y %b %d")
-    print(desired_format_converter)
+    output = datetime_input.strftime(desired_format)
+    print(output)
 
-datetime_format_converter("2023/3/11")
+datetime_format_converter("2023/3/11","%A, %Y %b %d")
