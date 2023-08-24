@@ -18,7 +18,8 @@ You can use the `datetime_format_converter` function to convert a date in the yo
 
 **Suppose you run the script and enter the following inputs:**
 
-`Enter the Date (YYYY/MM/DD):  2023/08/23`
+
+> Enter the Date (YYYY/MM/DD):  2023/08/23
 
 `Enter the Desired Format:     %A, %Y %b %d`
 
