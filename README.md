@@ -7,6 +7,25 @@ This is a Python script that converts a date in the format "YYYY/MM/DD" to a des
 
 You can use the `datetime_format_converter` function to convert a date in the "YYYY/MM/DD" format to a more readable format. The function takes the input date as a string argument and prints the result.
 
+## How to Run
+
+1. Clone the repository or download the script.
+2. Make sure you have Python installed on your system.
+3. Open a terminal or command prompt and navigate to the directory containing the script.
+4. Run the script using the command python script_name.py.
+
+## Example
+
+**Suppose you run the script and enter the following inputs:**
+
+```Enter the Date (YYYY/MM/DD):  2023/08/23```
+```Enter the Desired Format:     %A, %Y %b %d```
+
+**The output will be:**
+
+```Tuesday, 2023 Aug 23```
+
+
 ```python
 import datetime
 
