@@ -11,9 +11,11 @@ You can use the `datetime_format_converter` function to convert a date in the "Y
 import datetime
 
 def datetime_format_converter(input,desired_format):
+
     datetime_input = datetime.datetime.strptime(input,"%Y/%m/%d")
 
     output = datetime_input.strftime(desired_format)
     print(output)
 
-datetime_format_converter("2023/3/11","%A, %Y %b %d")
+datetime_format_converter(input("Enter the Date (YYYY/MM/DAY) : "),input("Enter the Desired Format : "))
+
