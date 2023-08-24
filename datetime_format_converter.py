@@ -1,5 +1,4 @@
 import datetime
-import arrow
 
 format_specifications = """
         Available Format Codes:
@@ -24,10 +23,10 @@ print(format_specifications)
 
 def datetime_format_converter(input,desired_format):
 
-    datetime_input = arrow.get(input)
+    datetime_input = datetime.datetime.strptime(input_date, "%Y/%m/%d")
 
     output = datetime_input.strftime(desired_format)
     print(output)
 
-datetime_format_converter(input("Enter the Date (YYYY-MM-DD) : "),input("Enter the Desired Format : "))
+datetime_format_converter(input("Enter the Date (YYYY/MM/DD) : "),input("Enter the Desired Format : "))
 
