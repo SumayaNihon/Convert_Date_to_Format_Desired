@@ -31,6 +31,7 @@ You can use the `datetime_format_converter` function to convert a date in the us
 ## Code
 ```python
 import datetime
+import arrow
 
 def datetime_format_converter(input,desired_format):
 
@@ -39,5 +40,5 @@ def datetime_format_converter(input,desired_format):
     output = datetime_input.strftime(desired_format)
     print(output)
 
-datetime_format_converter(input("Enter the Date  : "),input("Enter the Desired Format : "))
+datetime_format_converter(input("Enter the Date (YYYY-MM-DD) : "),input("Enter the Desired Format : "))
 
