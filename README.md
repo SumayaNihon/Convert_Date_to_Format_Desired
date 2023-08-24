@@ -5,7 +5,7 @@ This is a Python script that converts a date in the format "YYYY/MM/DD" to a des
 
 ## Usage
 
-You can use the `datetime_format_converter` function to convert a date in the your own desired format for more readablility. The function takes the input date as a string argument and prints the desired result.
+You can use the `datetime_format_converter` function to convert a date in the user desired format for more readablility. The function takes the input date as a string argument and prints the desired result.
 
 ## How to Run
 
