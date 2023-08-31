@@ -1,4 +1,5 @@
-import datetime
+import re
+from datetime import datetime
 
 format_specifications = """
         Available Format Codes:
@@ -21,12 +22,47 @@ format_specifications = """
 
 print(format_specifications)
 
-def datetime_format_converter(input,desired_format):
 
-    datetime_input = datetime.datetime.strptime(input_date, "%Y/%m/%d")
 
-    output = datetime_input.strftime(desired_format)
-    print(output)
+input_date = input("(Date Format: (YYYY/MM/DD) OR (YYYY/MM/DD HH:MM:SS)) \n Enter the Date: ")
+desired_format = input("Enter the Desired Format: ")
 
-datetime_format_converter(input("Enter the Date (YYYY/MM/DD) : "),input("Enter the Desired Format : "))
+
+
+def is_valid_format(format_string):
+    valid_format_regex = r'(%[aAbBcdHIlmMpPSyYzZ123@#$%^&(){}[\]])'
+    return re.match(valid_format_regex, format_string) is not None
+
+
+
+def convert_date(input_date, desired_format):
+
+    if not is_valid_format(desired_format):
+        return "Invalid desired format  \nExample:\nDesired Format: %A, %Y %b %d"
+
+    try:
+        parsed_date = datetime.strptime(input_date, '%Y/%m/%d %H:%M:%S')
+        formatted_date = parsed_date.strftime(desired_format)
+        return formatted_date
+    except ValueError:
+        pass
+
+
+    input_date_formats = ["%Y/%m/%d", "%Y-%m-%d", "%m/%d/%Y", "%m-%d-%Y", "%d/%m/%Y", "%d-%m-%Y"]
+
+    for format in input_date_formats:
+        try:
+            parsed_date = datetime.strptime(input_date, format)
+            formatted_date = parsed_date.strftime(desired_format)
+            return formatted_date
+        except ValueError:
+            pass
+
+    return "Invalid date format"
+
+
+
+output_date = convert_date(input_date, desired_format)
+
+print("Output:", output_date)
 
